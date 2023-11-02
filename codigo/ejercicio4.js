@@ -10,17 +10,16 @@ function retroceder(){
             break;
         }
     }
-    if(pos===0){
+
+    //Habilitamos el botón de avanzar por si lo habíamos deshabilitado
+    document.getElementById('avanzo').disabled=false;
+    //Modificamos las clases de los elementos
+    imagenes[pos].classList.remove('mostrando');
+    imagenes[pos-1].classList.add('mostrando');
+    if(pos-1===0){
         //Si estamos en el último elemento desactivamos el boton
         document.getElementById('retro').disabled=true; 
-    }else{
-        //Habilitamos el botón de avanzar por si lo habíamos deshabilitado
-        document.getElementById('avanzo').disabled=false;
-        //Modificamos las clases de los elementos
-        imagenes[pos].classList.remove('mostrando');
-        imagenes[pos-1].classList.add('mostrando');
     }
-
 }
 
 function avanzar(){
@@ -34,15 +33,14 @@ function avanzar(){
             break;
         }
     }
-    if(pos===imagenes.length-1){
+    //Habilitamos el botón de retroceso por si lo habíamos deshabilitado
+    document.getElementById('retro').disabled=false;
+    //Modificamos las clases de los elementos
+    imagenes[pos].classList.remove('mostrando');
+    imagenes[pos+1].classList.add('mostrando');
+    if(pos+1===imagenes.length-1){
         //Si estamos en el último elemento desactivamos el boton
         document.getElementById('avanzo').disabled=true; 
-    }else{
-        //Habilitamos el botón de retroceso por si lo habíamos deshabilitado
-        document.getElementById('retro').disabled=false;
-        //Modificamos las clases de los elementos
-        imagenes[pos].classList.remove('mostrando');
-        imagenes[pos+1].classList.add('mostrando');
     }
 }
 
