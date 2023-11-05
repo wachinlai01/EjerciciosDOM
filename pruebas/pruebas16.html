@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 16</h1>
+    <label for="progress">Progreso de carga: </label>
+    <meter id="progress" min="0" max="100" value="0"></meter>
+    <span id="mensajeCarga"></span>
+    <button onclick="cargar(this)">Descargar</button>
+    <br>
+    <label for="fileProgress">Progreso de carga de archivo:</label>
+    <progress id="fileProgress" value="0" max="100"></progress>
+    <span id="mensajeActulizacion"></span>
+    <button onclick="actualizar(this)">Actualizar</button><br>
+    <script src="../codigo/ejercicio16.js"></script>
+</body>
+</html>
