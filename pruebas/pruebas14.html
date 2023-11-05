@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../estilos/estilos14.css">
+</head>
+<body>
+    <h1>Ejercicio 14</h1>
+    <div class="vertical">
+        <ul>
+            <li onclick="desplegar(this)">Inicio</li>
+            <ul>
+                <li>Portada</li>
+                <li>Acerca de mi</li>
+                <li>Mis fotos</li>
+            </ul>
+            <li onclick="desplegar(this)">Proyectos</li>
+            <ul>
+                <li>Web Apps</li>
+                <li>Mobile Apps</li>
+                <li>Juegos</li>
+            </ul>
+            <li onclick="desplegar(this)">Portfolio</li>
+            <ul>
+                <li>Páginas webs</li>
+                <li>Software</li>
+            </ul>
+            <li>Contacto</li>
+        </ul>
+    </div>
+    <div class="horizontal">
+        <div onmouseover="desplegar2(this)">Inicio
+            <ul>
+                <li>Portada</li>
+                <li>Acerca de mi</li>
+                <li>Mis fotos</li>
+            </ul>
+        </div>
+        <div onmouseover="desplegar2(this)">Proyectos
+            <ul>
+                <li>Web Apps</li>
+                <li>Mobile Apps</li>
+                <li>Juegos</li>
+            </ul></div>
+        <div onmouseover="desplegar2(this)">Portfolio
+            <ul>
+                <li>Páginas webs</li>
+                <li>Software</li>
+            </ul>
+        </div>
+        <div>Contacto</div>
+    </div>
+<script src="../codigo/ejercicio14.js"></script>
+</body>
+</html>
