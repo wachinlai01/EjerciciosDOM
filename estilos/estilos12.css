@@ -1,0 +1,17 @@
+.marco{
+    position: absolute;
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    border: 5px solid black;
+}
+
+.marco img {
+    width: 500px;
+    height: 400px; 
+}
+
+.spoiler{
+    position: fixed;
+    bottom: 0;
+}
