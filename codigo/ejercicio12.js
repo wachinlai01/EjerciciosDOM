@@ -29,13 +29,14 @@ function desplazamiento(){
     let contenedor=document.querySelector('.marco');
     let estilo=window.getComputedStyle(contenedor);
     let margen=parseFloat(estilo.getPropertyValue("left"));
+    let anchoMaximo=document.querySelector('body').clientWidth-250;
     let desplazamiento=1;
     // Cada 40 milisegundos, incrementa el desplazamiento y actualiza la posición
     let intervalo = setInterval(function() {
         margen+=desplazamiento;
-        if (margen+desplazamiento<=1281.6)
+        if (margen+desplazamiento<=anchoMaximo)
         contenedor.style.setProperty("left", margen + "px");
-    }, 20);
+    }, 1);
     // Detenemos el movimiento cuando el ratón sale
     contenedor.addEventListener('mouseout', function() {
         clearInterval(intervalo);
