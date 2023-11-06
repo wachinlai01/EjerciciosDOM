@@ -1,12 +1,15 @@
 function correr() {
     let corredores = document.getElementsByTagName("div");
+    let anchoMaximo=document.querySelector('body').clientWidth;
     let intervalo = setInterval(function () {
         for (let corredor of corredores) {
             let velocidad = Math.floor(Math.random() * 20) + 1;
             let anchoActual = parseInt(window.getComputedStyle(corredor).getPropertyValue('width'));
             corredor.style.setProperty("width",anchoActual+velocidad+"px");
-            if (anchoActual>=1500){
+            if (anchoActual>=anchoMaximo-20){
                 //Vamos a poner un mensaje del ganador
+                //client width estudiar
+                //const trackWidth = document.querySelector('.track-area').clientWidth
                 let color=window.getComputedStyle(corredor).getPropertyValue('background-color');
                 let text="Ganador " + obtenerNombreCaballo(color);
                 let resultado=document.createElement("h1");
