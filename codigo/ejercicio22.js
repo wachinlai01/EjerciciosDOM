@@ -16,14 +16,17 @@ document.querySelectorAll("img").forEach(function(imagen){
         nuevaImagen.style.setProperty("left", "50%");
         nuevaImagen.style.setProperty("transform", "translate(-50%, -50%)");
         nuevaImagen.style.setProperty("z-index", "5");
-        capa.appendChild(nuevaImagen);
+        document.body.appendChild(nuevaImagen);
         //Introducimos el div en el html
         document.body.appendChild(capa);
         //Eliminamos el div si clickamos en el
         capa.addEventListener("click",function(){
-            let eliminar=document.querySelector("div");
-            let padre=eliminar.parentNode;
-            padre.removeChild(eliminar);
+            //Para eliminar el div
+            let eliminarDiv=document.querySelector("div");
+            let padre=eliminarDiv.parentNode;
+            padre.removeChild(eliminarDiv);
+            //Para eliminar nueva Imagen
+            padre.removeChild(nuevaImagen);
             //hacemos reaparecer la imagen
             imagen.style.setProperty("visibility","visible");
         })
