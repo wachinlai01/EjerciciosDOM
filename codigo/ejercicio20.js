@@ -19,7 +19,7 @@ function borrarV(btn){
     btn.disabled=true;
     document.querySelectorAll("button")[3].disabled=true;
     //Para eliminar el párrafo por defecto de la página
-    let original=document.querySelector("p");
+    let original=document.querySelector(".uno");
     let padre=original.parentNode;
     padre.removeChild(original);
 }
@@ -38,6 +38,7 @@ function borrarN(btn){
 function sustituir(){
     //Creamos la tabla
     let tabla=document.createElement("table");
+    tabla.setAttribute("class","uno");
     //Creamos las filas y celdas de la tabla
     for (let i=0;i<2;i++){
         let fila=document.createElement("tr");
