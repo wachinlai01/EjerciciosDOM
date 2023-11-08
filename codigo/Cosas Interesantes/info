@@ -1,0 +1,26 @@
+/*DELEGACIÓN DE EVENTOS(1) ES EQUIVALENTE A (2)
+
+1.
+document.querySelectorAll("#botones > button").forEach(function(boton) {
+  boton.addEventListener("click", function() {
+    // Bloque de la función que se ejecutará al hacer clic en cada botón
+    console.log("¡Hiciste clic en un botón!");
+  });
+});
+
+2.
+document.getElementById("botones").addEventListener("click", function(event) {
+  if (event.target.tagName === "BUTTON") {
+    // Bloque de la función que se ejecutará al hacer clic en un botón
+    console.log("¡Hiciste clic en un botón!");
+  }
+});
+
+*/
+
+/*PARA AÑADIR EVENTOS INDIVIDUALES A ELEMENTOS
+    document.getElementById("miBoton").onclick = miFuncion; 
+    function miFuncion() {
+        alert("¡Hiciste clic en el botón!");
+    }
+*/
