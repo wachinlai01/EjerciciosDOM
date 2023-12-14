@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+    <form method="post" action="">
+        <label for="DNI">DNI:</label>
+        <input type="text" id="DNI" name="DNI" placeholder="Ingrese su DNI">
+        <span id="errorDNI" style="color: red;"></span>
+        <br>
+        <label for="nombre">nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+        <span id="errorNombre" style="color: red;"></span>
+        <br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido">
+        <span id="errorApellido" style="color: red;"></span>
+        <br>
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email" placeholder="Ingrese su email">
+        <span id="errorEmail" style="color: red;"></span>
+        <br>
+        <label for="web">web:</label>
+        <input type="text" id="web" name="web" placeholder="Ingrese su web">
+        <span id="errorWeb" style="color: red;"></span>
+        <br>
+        <label for="contrasena">contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña">
+        <span id="errorContrasena" style="color: red;"></span>
+        <br>
+        <label for="hijos">Numero de hijos:</label>
+        <input type="text" id="hijos" name="hijos" placeholder="Numero de hijos">
+        <span id="errorHijos" style="color: red;"></span>
+        <br>
+        <button onclick="validarEjercicio5()" type="button">VALIDAR</button>
+        <input type="submit" value="Enviar" disabled>
+    </form>
+    <script src="../EjerciciosFormularios/ejercicio5.js"></script>
+</body>
+</html>
