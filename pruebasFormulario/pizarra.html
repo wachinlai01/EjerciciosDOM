@@ -67,7 +67,7 @@
 
         function comprobarFecha(){
             let valor=document.forms[1].querySelector("[name='fecha']");
-            let patron=/^[0-3][0-9]\-[0-1][1-2]\-[\d]{4}$/;
+            let patron=/^[0-3][0-9]\-([0-1])?[1-9]\-[\d]{4}$/;
             //Comprobamos si el campo esta vacio
             if (valor.value.trim().length<3){
                 valor.value="";
@@ -75,7 +75,7 @@
             }else{
                 if (!patron.test(valor.value)){
                     valor.value="";
-                    alert("Solo validos formatos dd-mm-yy");
+                    alert("Solo validos formatos dd-mm-yyyy");
                 }
                 else{
                     var numeros=valor.value.split("-");
