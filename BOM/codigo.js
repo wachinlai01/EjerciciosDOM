@@ -133,3 +133,4 @@ const detenerCuenta = () => {
     console.log('detengo cuenta');
     clearInterval(id2);
 }
+
