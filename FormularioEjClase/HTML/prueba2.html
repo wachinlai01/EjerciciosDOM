@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="author" content="José Miguel Cabezuelo" />
+    <title>Formulario con campos ocultos</title>
+    <style>
+        body{padding:100px;}
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        .container{
+        width:100%;
+        max-width:300px;
+        padding:10px;
+        border:1px solid #000;
+        border-radius:10px;
+        margin:auto;
+        background-color:#A9CEF4;
+        }
+        .formulario label{
+        display:block;
+        font-weight:bold;
+        }
+        .formulario input,.formulario select,.formulario textarea{
+        padding:5px;
+        width:100%;
+        margin:16px 0;
+        }
+        .formulario textarea{
+        resize:none;
+        height:120px;
+        }
+        #cursoInput{
+        border:2px solid #ff0000;
+        display:none;
+        }
+        #cursoLabel{
+        display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" class="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" placehold-er="Escribe tu nombre" id="nombre"/>
+            <label for="email">Email:</label>
+            <input type="text" name="email" placehold-er="Escribe tu email" id="email"/>
+            <label for="asunto" id="test">Asunto:</label>
+            <select name="asunto" id="asunto" onclick="mostrar(this)">
+                <option value="info">Solicitar información</option>
+                <option value="curso">Apuntarse a un curso</option>
+                <option value="otro">Otro motivo</option>
+            </select>
+            <label for="cursoInput" id="cursoLabel">Curso:</label>
+            <input type="text" name="curso" placehol-der="Escribe el nombre del curso" id="cursoInput"/>
+            <label for="mensaje">Escribe un mensaje:</label>
+            <textarea name="mensaje" id="mensaje"></textarea>
+        </form>
+    </div>
+    <button type="submit" onclick="validarNombre()">
+        comprobar nombre
+    </button>
+    <button type="submit" onclick="validarCorreo()">
+        comprobar correo
+    </button>
+<script src="../JavaScript/prueba2.js"></script>
+</body>
+</html>

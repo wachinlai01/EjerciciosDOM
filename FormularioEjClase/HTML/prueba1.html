@@ -1,0 +1,136 @@
+<!-- a) Comprobar que en el momento del envío ninguno de los campos tiene 
+    menos de dos caracteres (es decir, si está vacío, contiene una 
+    letra o dos letras se considerará no válido) accediendo a los campos
+    mediante document.forms y elements.
+b) Igual que el apartado a) pero accediendo a los campos directamente usando 
+    el atributo name (por ejemplo formularioContacto.apellidos 
+    haría alusión a un elemento input cuyo atributo name es apellidos 
+    en un formulario cuyo atributo name -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">label{display:block;margin:5px}</style>
+    <script>
+    window.onload = function(){
+        let ejemplo = document.getElementById('ejemplo');
+        ejemplo.addEventListener('click',ejecutarEjemplo());
+        ejemplo.addEventListener('click',ejecutarEjemplo2());
+    }
+
+    function ejecutarEjemplo(){
+        let msg = "";
+        let formularios = document.forms;
+        for (let i=0;i<formularios.length;i++){
+            for (let j=0;j<formularios[i].elements.length;j++){
+                msg+="\n\nElemento "+(j+1)+ " del formulario "+(i+1)+ " tiene el id: "+formularios[i].elements[j].id +
+                " y name " +formularios[i].elements[j].name;
+            }
+        }
+        alert(msg);
+    }
+
+    function ejecutarEjemplo2(){
+        for (let elemento of document.forms["formularioContacto"]){
+            if (elemento.type=="text"){
+                elemento.style.setProperty("background-color","red");
+            }
+        }
+        for (let elemento of document.forms["formularioReclamacion"]){
+            if (elemento.name=="motivo"){
+                elemento.style.setProperty("background-color","yellow");
+            }
+        }
+    }
+
+    function comprobarCampoContacto(){
+        let msg="Formulario de contacto: \n";
+        let i=0;
+        for (let elemento of document.forms["formularioContacto"]){
+            if (elemento.type=="text"){
+                i++;
+                if(elemento.value.length<=2){
+                    msg+="Campo "+i+" está vacio\n";
+                }
+            }
+        }
+        alert (msg);
+    }
+
+    function comprobarCampoReclamacion(){
+        let msg="Formulario de reclamacion: \n";
+        for (let elemento of document.forms["formularioReclamacion"]){
+            if (elemento.name=="fecha"){
+                if(elemento.value.length<=2){
+                    msg+="Campo fecha está vacio\n";
+                }
+            }
+        }
+        alert (msg);
+    }
+    </script>
+</head>
+<body>
+    <div id="cabecera">
+      <h2>Cursos</h2>
+      <h3>Ejemplos JavaScript - Formulario</h3>
+    </div>
+    <div style="color: blue; margin: 20px" id="ejemplo">Pulsa aquí</div>
+    <form name="formularioContacto" method="get" action="accion1.html">
+        <h2>Formulario de contacto</h2>
+        <label>Nombre:<input id="nombreFormContacto" type="text" name="nombre" value="Manu"/></label>
+        <label>Apellidos:<input
+            id="apellidosFormContacto"
+            type="text"
+            name="apellidos"/></label>
+        <label><input id="botonEnvio1" type="submit" value="Enviar"/></label>
+    </form>
+    <form name="formularioReclamacion" method="get" action="accion2.html">
+        <h2>Formulario de reclamación</h2>
+        <label>Motivo reclamación:<input
+            id="motivoFormReclama"
+            type="text"
+            name="motivo" required autocomplete="off"/></label>
+        <label>Fecha del hecho:<input id="fechaFormReclama" type="text" name="fecha"/></label>
+        <label><input id="botonEnvio2" type="submit" value="Enviar"/></label>
+    </form>
+    <form name="formularioLogin" method="get" action="accion3.html">
+        <h2>Formulario de login</h2>
+        <label>Usuario:<input
+            id="formUsuario"
+            type="text"
+            name="usuario" required autocomplete="off" pattern="^[a-zA-Z0-9ñÑ\W_]{8,20}$"/></label>
+        <label>Contraseña: <input id="password" 
+            type="password" 
+            name="password" required autocomplete="off"
+            pattern="^[a-zA-Z0-9ñÑ_]{8,20}$"/>
+        </label>
+        <label><input id="botonEnvio3" type="submit" value="Enviar"/></label>
+    </form>
+
+    <!-- Formulario general 
+    Para el mail: pattern="\b[A-Za-z0-9._]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"-->
+    <form name="formularioGeneral" method="get" action="accion4.html">
+        <h2>Formulario General</h2>
+        <label>Nombre y apellido<input
+            id="formNombre"
+            type="text"
+            name="nombre" required autocomplete="off" pattern="^[\p{L}]{8,20}$"/></label>
+        <label>Teléfono: 
+            <input id="telefono" 
+            type="text" 
+            name="telefono" required autocomplete="off"
+            pattern="^[\+]?[\d]{1,7}[\s\-][\d]{1,3}[\s\-][\d]{1,3}$"/>
+        </label>
+        <label><input id="botonEnvio3" type="submit" value="Enviar"/></label>
+    </form>
+    <button type="submit" onclick="validarFormulario()">
+    validar Formulario
+    </button>
+    <br><br>
+    <button type="submit" onclick="comprobarCampoContacto()">Comprobar contacto</button>
+    <button type="submit" onclick="comprobarCampoReclamacion()">Comprobar reclamacion</button>
+</body>
+</html>
