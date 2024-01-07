@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        function validarFormulario() {
+            comprobarCampoContacto();
+            comprobarCampoReclamacion();
+        }
+        function comprobarCampoContacto(){
+            comprobarNombre();
+            comprobarApellido();
+        }
+
+        function comprobarCampoReclamacion(){
+            comprobarMotivo();
+            comprobarFecha();
+        }
+
+        function comprobarNombre(){
+            let valor=document.forms[0].querySelector("[name='nombre']");
+            let patron=/^[A-Z][a-z]+([ ][A-Z][a-z]+)?$/;
+            //Comprobamos si el campo esta vacio
+            if (valor.value.trim().length<3){
+                valor.value="";
+                alert("Campo nombre obligatorio de minimo 3 letras");
+            }else{
+                //Comprobamos que cumpla el patron
+                if (!patron.test(valor.value)){
+                    alert("Maximo de dos nombres separados por un unico espacio");
+                }
+            }
+        }
+
+        function comprobarApellido(){
+            let valor=document.forms[0].querySelector("[name='apellidos']");
+            let patron=/^[A-Z][a-z]+([ ][A-Z][a-z]+)?$/;
+            //Comprobamos si el campo esta vacio
+            if (valor.value.trim().length<3){
+                valor.value="";
+                alert("Campo apellido obligatorio de minimo 3 letras");
+            }else{
+                if (!patron.test(valor.value)){
+                    valor.value="";
+                    alert("Maximo de dos apellidos separados por un unico espacio");
+                }
+            }
+        }
+
+        function comprobarMotivo(){
+            let valor=document.forms[1].querySelector("[name='motivo']");
+            let patron=/^[A-Za-z\d]*$/;
+            //Comprobamos si el campo esta vacio
+            if (valor.value.trim().length<3){
+                valor.value="";
+                alert("Campo motivo obligatorio de minimo 3 letras");
+            }else{
+                if (!patron.test(valor.value)){
+                    valor.value="";
+                    alert("No escribas cosas raras");
+                }
+            }
+        }
+
+        function comprobarFecha(){
+            let valor=document.forms[1].querySelector("[name='fecha']");
+            let patron=/^[0-3][0-9]\-([0-1])?[1-9]\-[\d]{4}$/;
+            //Comprobamos si el campo esta vacio
+            if (valor.value.trim().length<3){
+                valor.value="";
+                alert("Campo fecha obligatorio");
+            }else{
+                if (!patron.test(valor.value)){
+                    valor.value="";
+                    alert("Solo validos formatos dd-mm-yyyy");
+                }
+                else{
+                    var numeros=valor.value.split("-");
+                    if(numeros[0]>31){
+                        valor.value="";
+                        alert("Ningun mes tiene mas de 31 dias");
+                    }
+                    if(numeros[1]=="00"||numeros[1]>12){
+                        valor.value="";
+                        alert("Pon un mes real");
+                    }
+                }
+            }
+        }
+
+
+    </script>
+<body>
+    <div id="cabecera">
+        <h2>FORMULARIOS</h2>
+        <h3>Ejemplos JavaScript - Formulario</h3>
+    </div>
+    <div style="color: blue; margin: 20px" id="ejemplo">Pulsa aquí</div>
+  
+    <form name="formularioContacto" method="get" action="accion1.html">
+        <h2>Formulario de contacto</h2>
+        <label>Nombre:<input id="nombreFormContacto" type="text" name="nombre"/></label>
+        <label>Apellidos:<input
+            id="apellidosFormContacto"
+            type="text"
+            name="apellidos"/></label>
+        <label><input id="botonEnvio1" type="submit" value="Enviar" /></label>
+    </form>
+    <form name="formularioReclamacion" method="get" action="accion2.html">
+        <h2>Formulario de reclamación</h2>
+        <label>Motivo reclamación:<input
+            id="motivoFormReclama"
+            type="text"
+            name="motivo" required autocomplete="off"/></label>
+        <label>Fecha del hecho:<input id="fechaFormReclama" type="text" name="fecha"/></label>
+        <label><input id="botonEnvio2" type="submit" value="Enviar" /></label>
+    </form>
+    <button type="submit" id="botonValidar" onclick="validarFormulario()">Validar</button>
+</body>
+</html>
