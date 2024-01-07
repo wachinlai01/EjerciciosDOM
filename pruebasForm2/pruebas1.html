@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <form name="formulario1" onsubmit="return false;">
+        <label for="campo1">Campo 1:</label>
+        <input type="text" id="campo1" placeholder="Escribe algo">
+        <br>
+        <label for="campo2">Campo 2 (solo lectura):</label>
+        <input type="text" id="campo2" readonly>
+        <br>
+        <button type="submit" onclick="copiarTexto()">Copiar</button>
+        <br>
+    </form>
+
+    <h1>Ejercicio 2</h1>
+    <form name="formulario2" onsubmit="return false;">
+        <label for="campo1">Campo 1:</label>
+        <input type="text" id="campo1" placeholder="Escribe algo">
+        <br>
+        <label for="campo2">Campo 2 (solo lectura):</label>
+        <input type="text" id="campo2" readonly>
+        <br>
+        <button type="submit" onclick="limpiar()">Limpiar</button>
+        <br>
+    </form>
+
+    <h1>Ejercicio 3 a</h1>
+    <form name="formularioAficiones" onsubmit="return false;">
+        <label>Aficiones:</label>
+        <div>
+            <input type="checkbox" id="musica" name="aficiones" value="musica">
+            <label for="musica">Música</label>
+
+            <input type="checkbox" id="cerveza" name="aficiones" value="cerveza">
+            <label for="cerveza">Cerveza</label>
+
+            <input type="checkbox" id="leer" name="aficiones" value="leer">
+            <label for="leer">Leer</label>
+
+            <input type="checkbox" id="dormir" name="aficiones" value="dormir">
+            <label for="dormir">Dormir</label>
+
+            <input type="checkbox" id="cine" name="aficiones" value="cine">
+            <label for="cine">Cine</label>
+        </div>
+
+        <br>
+    
+        <label for="salida">Seleccion:</label>
+        <textarea id="salida" name="salida" rows="4" cols="50" readonly></textarea>
+
+        <br>
+    
+        <button type="button" onclick="mostrarSeleccion()">Mostrar Selección</button>
+    </form>
+
+    <h1>Ejercicio 3 b</h1>
+    <form name="formularioAficiones2" onsubmit="return false;">
+        <label>Aficiones:</label>
+        <div>
+            <input type="checkbox" id="musica" name="aficiones" value="musica">
+            <label for="musica">Música</label>
+
+            <input type="checkbox" id="cerveza" name="aficiones" value="cerveza">
+            <label for="cerveza">Cerveza</label>
+
+            <input type="checkbox" id="leer" name="aficiones" value="leer">
+            <label for="leer">Leer</label>
+
+            <input type="checkbox" id="dormir" name="aficiones" value="dormir">
+            <label for="dormir">Dormir</label>
+
+            <input type="checkbox" id="cine" name="aficiones" value="cine">
+            <label for="cine">Cine</label>
+        </div>
+
+        <br>
+    
+        <label for="salida">Comentarios:</label>
+        <textarea id="salida" name="salida" rows="4" cols="50" readonly></textarea>
+    </form>
+
+    
+        
+    <script src="../EjerciciosForm2/ejercicio1.js"></script>
+</body>
+</html>

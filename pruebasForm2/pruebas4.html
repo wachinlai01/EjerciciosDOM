@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 4</h1>
+
+    <form name="conversor" onsubmit="return false;">
+        <label for="cantidad">Cantidad:</label>
+        <input type="text" id="cantidad" name="cantidad" placeholder="Ingrese la cantidad">
+    
+        <label for="resultado">Resultado:</label>
+        <input type="text" id="resultado" name="resultado" readonly>
+    
+        <label for="moneda">Moneda:</label>
+        <select id="moneda" name="moneda">
+          <option value="euros">A euros</option>
+          <option value="dolares">A dólares</option>
+        </select>
+    
+        <button type="submit">Convertir</button>
+    </form>
+
+    <h1>Ejercicio 5</h1>
+
+    <form name="anagrama" onsubmit="return false;">
+        <label for="campo1">Campo 1:</label>
+        <input type="text" id="campo1" name="campo1" placeholder="Ingrese algo">
+    
+        <label for="campo2">Campo 2:</label>
+        <input type="text" id="campo2" name="campo2" placeholder="Ingrese algo">
+    
+        <button type="button" onclick="comprobar()">COMPROBAR</button>
+    </form>
+
+    <h1>Ejercicio 6</h1>
+
+    <form name="formularioPaises">
+        <label><input type="checkbox" name="pais" value="España"> España</label>
+        <label><input type="checkbox" name="pais" value="Francia"> Francia</label>
+        <label><input type="checkbox" name="pais" value="Alemania"> Alemania</label>
+        <label><input type="checkbox" name="pais" value="Italia"> Italia</label>
+        <label><input type="checkbox" name="pais" value="Reino Unido"> Reino Unido</label>
+        <label><input type="checkbox" name="pais" value="Suiza"> Suiza</label>
+    
+        <label for="listaPaises">Lista de Países:</label>
+        <select id="listaPaises" name="listaPaises"></select>
+    </form>
+
+    <script src="../EjerciciosForm2/ejercicio4.js"></script>
+</body>
+</html>
