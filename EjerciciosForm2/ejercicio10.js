@@ -7,9 +7,9 @@ const NVIDIA = ["GTX Serie 1000","GTX Serie 2000","GTX Serie 3000"];
 document.forms.miFormulario.fabricante.addEventListener("click",function(){
     let formulario=document.forms.miFormulario;
     let valor=formulario.fabricante.value;
+    eliminarOptions(formulario.modelo);
     switch (valor){
         case "Intel":
-            eliminarOptions(formulario.modelo);
             for (let elemento of INTEL){
                 let texto = document.createTextNode(elemento);
                 let option = document.createElement("option");
@@ -18,7 +18,6 @@ document.forms.miFormulario.fabricante.addEventListener("click",function(){
             }
             break;
         case "AMD":
-            eliminarOptions(formulario.modelo);
             for (let elemento of AMD){
                 let texto = document.createTextNode(elemento);
                 let option = document.createElement("option");
@@ -27,7 +26,6 @@ document.forms.miFormulario.fabricante.addEventListener("click",function(){
             }
             break;
         case "Nvidia":
-            eliminarOptions(formulario.modelo);
             for (let elemento of NVIDIA){
                 let texto = document.createTextNode(elemento);
                 let option = document.createElement("option");
@@ -36,7 +34,6 @@ document.forms.miFormulario.fabricante.addEventListener("click",function(){
             }
             break;
         default:
-            eliminarOptions(formulario.modelo);
             break;
     }
 })
