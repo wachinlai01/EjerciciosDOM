@@ -2,7 +2,8 @@
 //Expresiones regulares
 let regexUser = /^[A-Za-zñÑ0-9_]{4,16}$/;
 let regexNombre = /^[A-ZÑ][áéíóúüña-z]+([ ][A-ZÑ][áéíóúüña-z]+)?$/;
-let regexPassw = /^(?=.*\W_)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/;
+// let regexPassw = /^(?=.*\W_)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]){8,15}$/;
+let regexPassw = /^[A-Za-z]{8,15}/
 let regexMail = /^[a-zA-Z\d_]+@([a-zA-Z\d_]+\.)?[a-z]{3,15}\.[a-z]{2,3}$/;
 let regexTel = /^\d{3,14}$/;
 
