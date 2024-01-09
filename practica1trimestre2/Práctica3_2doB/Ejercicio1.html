@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Formularios</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <form>
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" type="text" name="nombre" size="20" maxlength="150" pattern="^[A-ZÑ][áéíóúüña-z]+([ ][A-ZÑ][áéíóúüña-z]+)?$" required/>
+        </p>
+        <p>
+            <label for="apellidos">Apellidos:</label>
+            <input id="apellidos" type="text" name="apellidos" size="20" maxlength="150" pattern="^[A-ZÑ][áéíóúüña-z]+([ ][A-ZÑ][áéíóúüña-z]+)?$" required/>
+        </p>
+        <p>
+            <label for="dni">DNI:</label>
+            <input id="dni" type="text" name="dni" size="9" maxlength="12" pattern="^(\d{8}[A-HJ-NP-TV-Z])|(\d{2}\.\d{3}\.\d{3}\.\-[A-HJ-NP-TV-Z])|(\d{8}\-[A-HJ-NP-TV-Z])$" required />
+        </p>
+        <p>
+          <fieldset>
+            <legend>¿Tienes carnét de conducir?<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></legend>
+           
+            <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Sí</label>
+            <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
+          </fieldset>
+        </p>
+        <p>
+          <label for="n1">¿Qué edad tienes?</label>
+        
+          <input type="number" min="0" max="120" step="1" id="n1" name="age"
+                 pattern="^1?[1-9]?[0-9]" required>
+        </p>
+        <p>
+          <label for="t2">¿Cuál es tu dirección de correo electrónico? </label>
+          <input type="email" id="t2" name="email" pattern="^[a-zA-Z\d_]+@([a-zA-Z\d_]+\.)?[a-z]{3,15}\.[a-z]{2,3}$" required>
+        </p>
+        <p>
+          <label for="t1">¿Cuál es tu fruta favorita?<abbr title="Este campo es obligatorio" aria-label="required">*</abbr></label>
+          <input type="text" id="t1" name="fruit" list="l1" required
+                 pattern="^Plátano|Platano|platano|plátano|Cereza|cereza|Manzana|manzana|Fresa|fresa|Limón|Limon|limon|limón|Naranja|naranja$">
+          <datalist id="l1">
+            <option>Plátano</option>
+            <option>Cereza</option>
+            <option>Manzana</option>
+            <option>Fresa</option>
+            <option>Limón</option>
+            <option>Naranja</option>
+          </datalist>
+        </p>
+        <p>
+          <label for="t3">Deja un mensaje</label>
+          <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+        </p>
+        <p>
+          <button>Enviar</button>
+        </p>
+      </form>
+    
+</body>
+</html>

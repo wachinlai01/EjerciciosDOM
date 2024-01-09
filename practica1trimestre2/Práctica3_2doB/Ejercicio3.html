@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <div class="row mx-0 text-center p-5 text-dark">
+        <h1><strong>Ejercicio 3 - Validación con JS</strong></h1>
+    </div>
+    <div class="container d-flex justify-content-around p-5 rounded-bottom mb-5">
+        <form id="formulario" class="row g-3 px-5" onsubmit="return false;">
+            <div class="col-md-6 px-3">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
+                    <div class="invalid-feedback">Debe ser de 4 a 16 dígitos y solo puede contener números, letras y guion bajo.</div>       
+                    <div class="valid-feedback"></div>  
+                    <label for="floatingInput">Usuario</label>
+                </div>
+            </div>
+            <div class="col-md-6 px-3">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                    <div class="invalid-feedback">Sólo puede contener letras y espacios.</div>       
+                    <div class="valid-feedback"></div> 
+                    <label for="floatingInput">Nombre</label>
+                </div>
+            </div>
+            <div class="col-md-6 px-3">
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                    <div class="invalid-feedback">Debe ser de 8 a 15 caracteres, contener al menos una letra mayúscula y una minúscula, un número, sin espacios en blanco y al menos 1 carácter especial.</div>       
+                    <div class="valid-feedback"></div> 
+                    <label for="floatingInput">Contraseña</label>
+                </div>
+            </div>
+            <div class="col-md-6 px-3">
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="rePassword" name="password2" placeholder="Contraseña">
+                    <div class="invalid-feedback">Ambas contraseñas deben ser iguales.</div>       
+                    <div class="valid-feedback"></div> 
+                    <label for="floatingInput">Repetir Contraseña</label>
+                </div>
+            </div>
+            <div class="col-md-6 px-3">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico">
+                    <div class="invalid-feedback">Ingresa un email válido: nombre@dominio.com</div>       
+                    <div class="valid-feedback"></div> 
+                    <label for="floatingInput">Email</label>
+                </div>
+            </div>
+            <div class="col-md-6 px-3">
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Teléfono">
+                    <div class="invalid-feedback">El teléfono solo puede contener números y el máximo son 14 dígitos</div>       
+                    <div class="valid-feedback"></div> 
+                    <label for="floatingInput">Teléfono</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <p>Preferencias en cuanto a deportes:</p>
+                <input type = "checkbox" class = "form-check-input" id="cb1" value ="Futbol" name="aficiones"><label>Futbol</label>
+                <input type = "checkbox" class = "form-check-input" id="cb2" value ="Baloncesto" name="aficiones"><label>Baloncesto</label>
+                <input type = "checkbox" class = "form-check-input" id="cb3" value ="Tenis" name="aficiones"><label>Tenis</label>
+                <input type = "checkbox" class = "form-check-input" id="cb4" value ="Voleibol" name="aficiones"><label>Voleibol</label>
+                <input type = "checkbox" class = "form-check-input" id="cb5" value ="Natacion" name="aficiones"><label>Natacion</label>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" name="salida" readonly></textarea>
+            </div>
+            <div class="col-12 px-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkTerms">
+                    <label class="form-check-label" for="checkTerms">
+                        Acepto los términos y condiciones
+                    </label>
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto mt-5">
+                <button id="btnEnviar" type="submit" class="btn btn-primary btn-lg">
+                    <!-- <span class="spinner-border spinner-border-lg"></span> -->
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="ejercicio3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio 2</title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+      body {
+        margin-left: 30px;
+        font-family: sans-serif;
+      }
+      h4 {
+        margin: 0;
+      }
+      div {
+        float: left;
+      }
+
+      .estiloForm,
+      #validacionDatos {
+        background-color: #f3f3f3;
+        border: solid 2px black;
+        margin-left: 10px;
+        width: 300px;
+      }
+
+      .estiloForm {
+        width: 330px;
+        padding: 10px;
+      }
+      #validacionDatos {
+        height: 280px;
+        padding: 10px;
+        background-color: yellow;
+      }
+
+      .estiloForm label {
+        display: block;
+        width: 120px;
+        float: left;
+        text-align: right;
+        margin-bottom: 35px;
+        padding-right: 20px;
+      }
+
+      br {
+        clear: left;
+      }
+      input[type="submit"],
+      input[type="reset"] {
+        margin: 25px 5px 10px 5px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <h2>Práctica 3</h2>
+    <h3>Ejercicio 2 - Validación con JS</h3>
+
+    <main class="estiloForm">
+      <form
+        name="formularioContacto"
+        method="get"
+        action="#"
+        onsubmit="return false;">
+        <label>Tratamiento</label><input type="radio" name="tratamiento" id="tratarSr" value="Sr." />Sr.
+
+        <input
+          type="radio"
+          name="tratamiento"
+          id="tratarSra"
+          value="Sra."
+        />Sra.<br />
+
+        <label>Nombre</label><input id="nombre" name="Nombre" type="text" /><br />
+
+        <label>Apellidos</label><input id="apellidos" name="Apellidos" type="text" /><br />
+
+        <label>Dirección</label><input id="direccion" name="Direccion" type="text" /><br />
+
+        <label>Código postal</label><input id="codigo_postal" name="Codigo_Postal" type="text" /><br />
+
+        <label>Ciudad</label>
+        <select id="ciudad" name="ciudad">
+          <option value="">Elija opción</option>
+
+          <option value="Malaga">Málaga</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Barcelona">Barcelona</option>
+          </select>
+          <br />
+
+        <label>Preferencias</label><input name="Libros" type="checkbox" />Libros
+
+        <input name="Peliculas" type="checkbox" />Películas
+
+        <input type="submit" value="Enviar" />
+        <input type="reset" value="Cancelar" />
+      </form>
+    </main>
+
+    <div style="float: left">
+      <div id="validacionDatos" style="float: left">
+        <h4>Aviso datos a revisar o corregir:</h4>
+      </div>
+    </div>
+
+    <script src="ejercicio2.js"></script>
+  </body>
+</html>

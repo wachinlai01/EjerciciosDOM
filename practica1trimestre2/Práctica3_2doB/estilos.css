@@ -1,0 +1,24 @@
+body{
+    background: #EEEEEE;
+}
+
+.hide{
+    display: none !important;
+}
+
+/* Estilos para el color de la alerta de envío de formulario */
+.swal-button:hover{
+    background-color: #2980B9 !important;
+}
+
+.swal-icon--success__hide-corners{
+    background-color: #EEEEEE !important;
+}
+
+.swal-icon--success::before {
+    background: #EEEEEE !important;
+}
+
+.swal-icon--success::after {
+    background: #EEEEEE !important;
+}
